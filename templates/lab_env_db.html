@@ -199,9 +199,14 @@
         vAxis: {
           title: 'Degrees'
         },
+        chartArea: {
+          width: '50%'
+        },
         title: 'Temperature',
         curveType: 'function'  //Makes line curved
       };
+
+
 
       var chart = new google.visualization.LineChart(document.getElementById('chart_temps'));
 
@@ -229,6 +234,9 @@
           format: 'dd-MMM-yyyy HH:mm'        },
         vAxis: {
           title: 'Percent'
+        },
+        chartArea: {
+          width: '50%'
         },
         title: 'Humidity',
         curveType: 'function'  //Makes line curved
