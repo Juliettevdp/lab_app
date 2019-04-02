@@ -58,10 +58,6 @@ app = Flask(__name__)
 app.debug = True # Make this False if you are no longer debugging
 
 @app.route("/")
-def hello():
-	return "Hello World!"
-
-@app.route("/lab_temp")
 def lab_temp():
 	#import sys
 	#import Adafruit_DHT
