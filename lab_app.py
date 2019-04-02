@@ -58,10 +58,7 @@ app = Flask(__name__)
 app.debug = True # Make this False if you are no longer debugging
 
 @app.route("/")
-def lab_temp():
-	#import sys
-	#import Adafruit_DHT
-	
+def lab_temp():	
 	sensor = Adafruit_DHT.DHT11
 	pin = 4
 

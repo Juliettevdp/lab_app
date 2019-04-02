@@ -66,7 +66,10 @@ Er wordt hier vanuit gegaan dat de app in /var/www/lab_app staat. Hou er rekenin
 
 ### Let op
 Let op dat je soms root toegang nodig hebt en dat je de Python virtual environment moet activeren ( . bin/activate )
-Na wijzigingen in python systemctl restarten: systemctl restart emperor.uwsgi.service 
+Na wijzigingen in python systemctl restarten: systemctl restart emperor.uwsgi.service
+
+### Timezones
+De timestamps zijn gebaseerd op de tijd ingesteld op de Raspberry Pi.
 
 ### Browser compatibility
 Werkt in alle browsers, alleen in Firefox laden pas na uitschakelen blokkering vsn trackers (schildje naast adresbalk). Trackers, in dit geval gcharts, worden in FF automatisch geblokkeerd.
