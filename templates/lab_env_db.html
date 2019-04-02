@@ -112,12 +112,12 @@
             </table>
         </div>
  
-        <div class="two-thirds column" style="margin-top: 5%">
-        <div class="row">                  
-          <div class="row">
-            <div class="three columns">
-                <div id="chart_temps"></div>
-                <div id="chart_humid"></div>
+        <div class="two-thirds column" style="margin-top: 5%;">
+        <div class="row" style="width: 100%;">                  
+          <div class="row" style="width: 100%;">
+            <div class="three columns" style="width: 100%;">
+                <div id="chart_temps" style="width: 100%;"></div>
+                <div id="chart_humid" style="width: 100%;"></div>
             </div>
           </div>
         </div>     
@@ -131,7 +131,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js" ></script>
  
  
-  <script>
+<script type="text/javascript">
     jQuery( "#datetime_range" ).submit(function( event ) {
         timezone = jstz.determine();
         jQuery(".timezone").val(timezone.name());      
@@ -174,10 +174,11 @@
   // google.load('visualization', '1.0', {'packages':['corechart']});
   // google.charts.setOnLoadCallback(drawChart);
 
-  google.charts.load('current', {packages: ['corechart']});  
-  google.charts.setOnLoadCallback(drawChart);
+  google.charts.load('visualization', {packages: ['corechart']});  
+  google.charts.setOnLoadCallback(drawChart1);
+  google.charts.setOnLoadCallback(drawChart2);
  
-    function drawChart() {
+    function drawChart1() {
 
       var data = new google.visualization.DataTable();
       data.addColumn('datetime', 'Time');  
@@ -189,7 +190,7 @@
         ]);
 
       var options = {
-        width: 600,
+        //width: 600px, //remove this to make the graph responsive (and add width: 100% somewhere else)
         height: 563,
         hAxis: {
           title: "Date",
@@ -205,18 +206,10 @@
       var chart = new google.visualization.LineChart(document.getElementById('chart_temps'));
 
       chart.draw(data, options);
-
     }
-</script>
- 
 
-<script>
-    
-    google.load('visualization', '1.0', {'packages':['corechart']});
 
-    google.setOnLoadCallback(drawChart);
-
-    function drawChart() {
+    function drawChart2() {
 
       var data = new google.visualization.DataTable();
       data.addColumn('datetime', 'Time');  
@@ -228,7 +221,7 @@
         ]);
 
       var options = {
-        width: 600,
+        //width: 600px, //remove this to make the graph responsive (and add width: 100% somewhere else)
         height: 563,
         hAxis: {
           title: "Date",
@@ -246,6 +239,14 @@
       chart.draw(data, options);
 
     }
+
+  $(window).resize(function(){
+      drawChart1();
+      drawChart2();
+  });
+
+
+
 
 </script>  
 
