@@ -69,7 +69,7 @@ Let op dat je soms root toegang nodig hebt en dat je de Python virtual environme
 Na wijzigingen in python systemctl restarten: systemctl restart emperor.uwsgi.service
 
 ### Timezones
-De timestamps zijn gebaseerd op de tijd ingesteld op de Raspberry Pi.
+De timezones worden de code geconverteerd. De Raspberry Pi moet op UTC staan. 
 
 ### Browser compatibility
 Werkt in alle browsers, alleen in Firefox laden pas na uitschakelen blokkering vsn trackers (schildje naast adresbalk). Trackers, in dit geval gcharts, worden in FF automatisch geblokkeerd.
